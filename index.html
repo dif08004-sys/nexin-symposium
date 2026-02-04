@@ -3,960 +3,244 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nexin Symposium — Connexin Channels & Hemichannels (Online)</title>
-  <meta name="description" content="Nexin Symposium — online symposium on connexin channels and hemichannels. Program shown in PST and EET. Hosted on Zoom." />
-
+  <title>The 1st Joint Symposium on Connexin Channels Biophysics</title>
+  
   <style>
-    :root{
-      --bg:#0b1020;
-      --panel:#0f1730;
-      --panel2:#111b3a;
-      --text:#e9eefc;
-      --muted:#b7c2e6;
-      --line:rgba(255,255,255,.10);
-      --brand:#7aa2ff;
-      --brand2:#74f0c9;
-      --accent:#ffcf6e;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(900px 500px at 18% 5%, rgba(122,162,255,.25), transparent 55%),
-        radial-gradient(800px 500px at 85% 10%, rgba(116,240,201,.18), transparent 55%),
-        radial-gradient(700px 500px at 70% 85%, rgba(255,207,110,.12), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .skip{
-      position:absolute; left:-999px; top:10px;
-      padding:10px 12px; background:var(--panel2); border:1px solid var(--line); border-radius:12px;
-    }
-    .skip:focus{left:18px; z-index:9999}
-
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(140%) blur(10px);
-      background: linear-gradient(to bottom, rgba(11,16,32,.85), rgba(11,16,32,.45));
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:900; letter-spacing:.2px;
-      min-width: 260px;
-    }
-    .brandText{display:flex; flex-direction:column}
-    .brandText .t1{font-size:14px; opacity:.98}
-    .brandText .t2{font-size:12px; color:var(--muted); font-weight:800}
-
-    .logoSvg{width:44px; height:44px; flex:0 0 auto}
-    nav ul{
-      list-style:none; display:flex; gap:14px; margin:0; padding:0;
-      align-items:center;
-    }
-    nav a{
-      display:inline-flex; padding:10px 10px;
-      border-radius:12px;
-      color:var(--muted);
-      border:1px solid transparent;
-      transition:.18s ease;
-      font-weight:700;
-      font-size:14px;
-    }
-    nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
-    nav a.active{color:var(--text); border-color:rgba(122,162,255,.35); background:rgba(122,162,255,.10)}
-    .cta{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:14px;
-      background: linear-gradient(135deg, rgba(122,162,255,.95), rgba(116,240,201,.8));
-      color:#071022;
-      font-weight:900;
-      border:0;
-      cursor:pointer;
-      box-shadow: 0 14px 40px rgba(122,162,255,.22);
-      transition: transform .15s ease;
-      white-space:nowrap;
-    }
-    .cta:hover{transform: translateY(-1px)}
-    .menuBtn{
-      display:none;
-      background:transparent; border:1px solid var(--line); color:var(--text);
-      border-radius:12px; padding:10px 10px; cursor:pointer;
-      white-space:nowrap;
+    :root {
+      --bg: #fdfdfe;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --brand: #2563eb;
+      --brand-soft: #eff6ff;
+      --accent: #38bdf8;
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --radius: 12px;
+      --max: 1000px;
     }
 
-    .card{
-      background: linear-gradient(180deg, rgba(17,27,58,.85), rgba(15,23,48,.70));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand b { font-size: 18px; color: var(--brand); letter-spacing: -0.5px; }
+
+    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    nav a { font-weight: 600; font-size: 14px; color: var(--text); text-decoration: none; }
+    nav a:hover { color: var(--brand); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; border-radius: 8px;
+      font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.2s;
+      border: none; font-size: 15px;
+    }
+    .btn-primary { background: var(--brand); color: white; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+    .hero { padding: 80px 0 40px; text-align: center; }
+    h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.2; margin-bottom: 16px; font-weight: 800; }
+    .hero p { max-width: 750px; margin: 0 auto 24px; font-size: 18px; color: var(--muted); }
+
+    .section { padding: 48px 0; }
+    .section-title { margin-bottom: 24px; }
+    .section-title h2 { font-size: 26px; border-left: 4px solid var(--brand); padding-left: 15px; }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
       box-shadow: var(--shadow);
     }
 
-    .hero{padding:44px 0 20px}
-    .heroGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px; align-items:stretch}
-    .heroLeft{padding:22px}
-    .kicker{
-      display:inline-flex; align-items:center; gap:8px;
-      font-weight:900;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      font-size:12px;
-      color:rgba(233,238,252,.88);
-      border:1px solid var(--line);
-      padding:7px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.03);
-    }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: var(--brand2);
-      box-shadow: 0 0 0 6px rgba(116,240,201,.12);
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.08;
-      letter-spacing:-.6px;
-    }
-    .subtitle{color:var(--muted); font-size:16px; margin:0 0 14px}
-    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px}
-    .pill{
-      font-weight:800; font-size:13px;
-      color:rgba(233,238,252,.92);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 10px;
-      background: rgba(255,255,255,.03);
-    }
-    .heroActions{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
-    .ghost{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      color:var(--text);
-      background: rgba(255,255,255,.03);
-      font-weight:900;
-      cursor:pointer;
-    }
-    .ghost:hover{background: rgba(255,255,255,.06)}
-    .mini{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; color:var(--muted); font-size:13px}
-    .mini b{color:var(--text)}
+    /* Program Table */
+    .table-wrap { overflow-x: auto; margin-top: 20px; border: 1px solid var(--line); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th { background: #f8fafc; text-align: left; padding: 12px; font-size: 12px; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); }
+    td { padding: 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .time-cell { width: 150px; font-weight: 700; font-size: 14px; color: var(--brand); }
+    .speaker-name { display: block; font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+    .speaker-affil { font-size: 14px; color: var(--muted); font-style: italic; display: block; }
+    .session-label { font-size: 11px; font-weight: 800; padding: 3px 8px; background: var(--brand-soft); color: var(--brand); border-radius: 4px; text-transform: uppercase; }
 
-    .heroRight{padding:18px; display:flex; flex-direction:column; gap:12px}
-    .infoBox{
-      padding:14px; border-radius:16px; border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-    }
-    .infoTitle{font-weight:900; letter-spacing:.2px; margin:0 0 8px}
-    .infoLine{display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-size:14px}
-    .infoLine span:last-child{color:var(--text); font-weight:900}
+    /* Info Blocks */
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .registration-box { background: var(--brand-soft); border: 1px dashed var(--brand); text-align: center; }
 
-    section{padding:22px 0}
-    .sectionHead{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:12px}
-    .sectionHead h2{margin:0; font-size:22px; letter-spacing:-.2px}
-    .sectionHead p{margin:0; color:var(--muted); max-width:64ch}
-    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-    .box{padding:16px; border-radius:var(--radius); border:1px solid var(--line); background: rgba(255,255,255,.03)}
-    .box h3{margin:0 0 8px; font-size:16px}
-    .box p{margin:0; color:var(--muted); font-size:14px}
+    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; text-align: center; }
 
-    .controls{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-      padding:12px; border-radius:var(--radius);
-      border:1px solid var(--line); background: rgba(255,255,255,.03);
-      margin-bottom:12px;
-    }
-    .controls input, .controls select, .controls button.smallBtn{
-      background: rgba(11,16,32,.45);
-      border:1px solid var(--line);
-      color:var(--text);
-      border-radius:12px;
-      padding:10px 10px;
-      outline:none;
-      font-weight:800;
-    }
-    .controls input::placeholder{color:rgba(183,194,230,.75)}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color:var(--muted);
-      font-weight:900;
-      font-size:12px;
-      white-space:nowrap;
-    }
-    .seg{
-      display:flex; gap:6px; align-items:center;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px;
-      background: rgba(255,255,255,.02);
-    }
-    .seg button{
-      border:0;
-      padding:8px 10px;
-      border-radius:999px;
-      background:transparent;
-      color:var(--muted);
-      font-weight:900;
-      cursor:pointer;
-    }
-    .seg button.active{
-      background: rgba(122,162,255,.16);
-      color:var(--text);
-      border:1px solid rgba(122,162,255,.28);
-    }
-
-    table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      overflow:hidden;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-    }
-    th, td{
-      padding:12px;
-      border-bottom:1px solid var(--line);
-      text-align:left;
-      vertical-align:top;
-      font-size:14px;
-    }
-    th{color:rgba(233,238,252,.92); font-size:13px; letter-spacing:.3px; text-transform:uppercase}
-    tr:last-child td{border-bottom:0}
-
-    .time{font-weight:900; color:var(--text); white-space:nowrap}
-    .topic{font-weight:900; margin:0 0 6px}
-    .speaker{margin:0; color:var(--muted)}
-    .affil{margin:6px 0 0; color:rgba(183,194,230,.88); font-size:13px}
-    .tag{
-      display:inline-flex; align-items:center;
-      padding:6px 9px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color:var(--muted);
-      font-weight:900;
-      font-size:12px;
-      white-space:nowrap;
-    }
-    .rowHeader td{
-      background: rgba(122,162,255,.08);
-      font-weight:900;
-      color:rgba(233,238,252,.95);
-    }
-    .break td{
-      background: rgba(255,207,110,.06);
-    }
-    .note{margin:0; color:var(--muted); font-size:13px}
-
-    /* timezone mode */
-    .mode-pst .col-eet{display:none}
-    .mode-eet .col-pst{display:none}
-
-    footer{
-      padding:22px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .footerGrid{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between}
-    .smallLinks{display:flex; gap:10px; flex-wrap:wrap}
-    .smallLinks a{padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.02)}
-    .smallLinks a:hover{background:rgba(255,255,255,.05); color:var(--text)}
-
-    dialog{
-      border:1px solid var(--line);
-      border-radius:22px;
-      background: linear-gradient(180deg, rgba(17,27,58,.95), rgba(15,23,48,.92));
-      color:var(--text);
-      box-shadow: 0 24px 60px rgba(0,0,0,.55);
-      width:min(720px, calc(100% - 24px));
-    }
-    dialog::backdrop{background:rgba(0,0,0,.55)}
-    .modalHead{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
-    .modalHead h3{margin:0; font-size:18px}
-    .modalHead p{margin:6px 0 0; color:var(--muted); font-size:13px}
-    .closeBtn{
-      background:transparent; color:var(--text);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:8px 10px;
-      cursor:pointer;
-      font-weight:900;
-    }
-    .form{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-    .form label{display:grid; gap:6px; font-weight:900; font-size:13px; color:rgba(233,238,252,.92)}
-    .form input, .form select, .form textarea{
-      background: rgba(11,16,32,.45);
-      border:1px solid var(--line);
-      color:var(--text);
-      border-radius:14px;
-      padding:10px 10px;
-      outline:none;
-      font-weight:800;
-    }
-    .form textarea{min-height:90px; resize:vertical; grid-column:1/-1}
-    .form .full{grid-column:1/-1}
-    .form .row{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      grid-column:1/-1;
-      margin-top:4px;
-    }
-
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-      nav ul{display:none}
-      .menuBtn{display:inline-flex}
-      nav.open ul{
-        display:flex;
-        position:absolute;
-        left:18px; right:18px; top:62px;
-        flex-direction:column;
-        padding:10px;
-        border-radius:18px;
-        border:1px solid var(--line);
-        background: rgba(15,23,48,.96);
-        box-shadow: var(--shadow);
-      }
-      nav.open ul a{width:100%; justify-content:flex-start}
-      .form{grid-template-columns:1fr}
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
     }
   </style>
 </head>
+<body>
 
-<body class="mode-both">
-  <a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <b>Joint Symposium 2026</b>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#committees">Committees</a></li>
+        </ul>
+      </nav>
+      <a href="#registration" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">RSVP Now</a>
+    </div>
+  </div>
+</header>
 
-  <header>
+<main>
+  <section class="hero">
     <div class="container">
-      <div class="nav">
-        <div class="brand" aria-label="Nexin Symposium brand">
-          <!-- Logo (inline SVG) -->
-          <svg class="logoSvg" viewBox="0 0 64 64" role="img" aria-label="Nexin Symposium logo">
-            <defs>
-              <linearGradient id="lgA" x1="0" x2="1">
-                <stop offset="0" stop-color="rgba(122,162,255,1)"/>
-                <stop offset="1" stop-color="rgba(116,240,201,1)"/>
-              </linearGradient>
-              <linearGradient id="lgB" x1="1" x2="0">
-                <stop offset="0" stop-color="rgba(255,207,110,1)"/>
-                <stop offset="1" stop-color="rgba(122,162,255,.95)"/>
-              </linearGradient>
-            </defs>
-            <rect x="6" y="6" width="52" height="52" rx="18" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"/>
-            <path d="M18 20c7-7 21-7 28 0" fill="none" stroke="url(#lgA)" stroke-width="5" stroke-linecap="round"/>
-            <path d="M18 44c7 7 21 7 28 0" fill="none" stroke="url(#lgB)" stroke-width="5" stroke-linecap="round"/>
-            <path d="M32 18v28" stroke="rgba(233,238,252,.35)" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="32" cy="32" r="6" fill="rgba(233,238,252,.10)" stroke="rgba(255,255,255,.18)"/>
-          </svg>
-
-          <div class="brandText">
-            <div class="t1">Nexin Symposium</div>
-            <div class="t2">Online • Connexin Channels & Hemichannels</div>
-          </div>
-        </div>
-
-        <nav id="nav" aria-label="Primary">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰ Menu</button>
-          <ul>
-            <li><a href="#about" data-link>About</a></li>
-            <li><a href="#program" data-link>Program</a></li>
-            <li><a href="#speakers" data-link>Speakers</a></li>
-            <li><a href="#zoom" data-link>Zoom</a></li>
-            <li><a href="#committees" data-link>Committees</a></li>
-            <li><a href="#contact" data-link>Contact</a></li>
-          </ul>
-        </nav>
-
-        <button class="cta" id="registerBtn" aria-label="Open registration">
-          Register / RSVP <span aria-hidden="true">→</span>
-        </button>
+      <h1>The 1st Joint Symposium on Connexin Channels Biophysics: <br><span style="color:var(--brand)">Current Directions and Future Opportunities</span></h1>
+      <p>A specialized meeting on the latest advances in intercellular communication.</p>
+      <div style="display:flex; gap:10px; justify-content:center; font-weight: 700; color: var(--brand);">
+        <span>📅 March 19, 2026</span>
+        <span>•</span>
+        <span>💻 Online via Zoom</span>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container">
-        <div class="heroGrid">
-          <div class="card heroLeft">
-            <div class="kicker"><span class="dot" aria-hidden="true"></span> Online-only symposium • Zoom</div>
-            <h1>Nexin Symposium 2026</h1>
-            <p class="subtitle">
-              A focused online symposium on connexin gap junction channels and hemichannels—covering permeation,
-              structure, regulation, and physiology.
-            </p>
-
-            <div class="pillRow" aria-label="Key topics">
-              <span class="pill">Hemichannels</span>
-              <span class="pill">Gap junctions</span>
-              <span class="pill">Cryo-EM</span>
-              <span class="pill">Cardiac connexins</span>
-              <span class="pill">Permeation & gating</span>
-            </div>
-
-            <div class="heroActions">
-              <a class="ghost" href="#program">View program</a>
-              <a class="ghost" href="#zoom">Zoom access</a>
-              <button class="cta" id="icsBtn" type="button">Add to calendar (.ics)</button>
-            </div>
-
-            <div class="mini" role="list" aria-label="Quick details">
-              <div role="listitem">📅 <b>Date:</b> March 19, 2026</div>
-              <div role="listitem">🌍 <b>Time zones:</b> Pacific Standard Time (PST) & Eastern Europe (EET)</div>
-              <div role="listitem">💻 <b>Platform:</b> Zoom</div>
-            </div>
-
-            <p class="note" style="margin-top:12px;">
-              Note: The agenda below displays times exactly as provided (PST and EET).
-            </p>
-          </div>
-
-          <div class="card heroRight">
-            <div class="infoBox" aria-label="Highlights">
-              <p class="infoTitle">At a glance</p>
-              <div class="infoLine"><span>Sessions</span><span>2</span></div>
-              <div class="infoLine"><span>Keynote</span><span>1</span></div>
-              <div class="infoLine"><span>Talks</span><span>7</span></div>
-            </div>
-
-            <div class="infoBox" aria-label="Zoom note">
-              <p class="infoTitle">Zoom access</p>
-              <p class="note">
-                The Zoom link will be provided to registered participants.
-              </p>
-              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="ghost" href="#zoom">Zoom details</a>
-                <button class="ghost" id="copyZoomBtn" type="button">Copy Zoom template</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>About the Symposium</h2>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>About</h2>
-            <p>
-              Nexin Symposium is an online-only meeting highlighting recent advances in connexin channels and hemichannels,
-              from molecular permeation to physiology and disease.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid3">
-          <div class="box">
-            <h3>What you’ll learn</h3>
-            <p>Mechanisms of permeation, gating and regulation, structural insights, and functional roles in tissues.</p>
-          </div>
-          <div class="box">
-            <h3>Who it’s for</h3>
-            <p>Researchers and trainees in physiology, biophysics, structural biology, computational modeling, and pharmacology.</p>
-          </div>
-          <div class="box">
-            <h3>Format</h3>
-            <p>Live Zoom talks and moderated Q&amp;A, with a short break between sessions.</p>
-          </div>
-        </div>
+      <div class="card">
+        <p>This Symposium is an online-only meeting highlighting recent advances in connexin channels and hemichannels, from molecular permeation to physiology and disease. Our goal is to foster international collaboration and share cutting-edge biophysical research in the field of gap junctions.</p>
+        <p style="margin-top: 15px;"><b>Zoom Access:</b> The meeting will be hosted on the Zoom platform. Registered participants will receive the Meeting ID and Passcode via email 24 hours prior to the event.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="program">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>Program</h2>
-            <p>Filter by speaker/topic and choose whether to view times in PST, EET, or both.</p>
-          </div>
-        </div>
-
-        <div class="controls" role="group" aria-label="Program controls">
-          <input id="search" type="search" placeholder="Search: Cx43, cryo-EM, permeation…" aria-label="Search program" />
-          <span class="chip" id="countChip">Showing 0 items</span>
-
-          <div style="flex:1"></div>
-
-          <div class="seg" role="group" aria-label="Time zone display">
-            <button type="button" id="btnBoth" class="active">Both</button>
-            <button type="button" id="btnPst">PST</button>
-            <button type="button" id="btnEet">EET</button>
-          </div>
-        </div>
-
-        <table aria-label="Nexin Symposium schedule">
+  <section id="program" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Scientific Program</h2>
+        <p>Times are provided in <b>PST</b> (Pacific Standard) and <b>EET</b> (Eastern European) time zones.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
           <thead>
             <tr>
-              <th class="col-pst" style="width:160px;">Time (PST)</th>
-              <th class="col-eet" style="width:170px;">Time (EET)</th>
-              <th>Talk</th>
-              <th style="width:220px;">Session</th>
+              <th>Time (PST / EET)</th>
+              <th>Speaker & Affiliation</th>
+              <th>Session</th>
             </tr>
           </thead>
-          <tbody id="scheduleBody"></tbody>
+          <tbody id="scheduleBody">
+            </tbody>
         </table>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="speakers">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>Speakers</h2>
-          </div>
-        </div>
-
-        <div class="grid2" id="speakerCards"></div>
+  <section id="registration" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Registration</h2>
       </div>
-    </section>
-
-    <section id="zoom">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>Zoom</h2>
-            <p>This is an online-only symposium. Zoom access details will be shared with registered participants.</p>
-          </div>
-        </div>
-
-        <div class="grid2">
-          <div class="box">
-            <h3>Access</h3>
-            <p class="note">
-              The Zoom link, Meeting ID, and passcode will be provided to <b>registered participants</b>.
-            </p>
-            <p class="note" style="margin-top:10px;">
-              If you have not received the Zoom details after registering, please contact the symposium office below.
-            </p>
-          </div>
-
-          <div class="box">
-            <h3>Best practices</h3>
-            <p class="note">• Join 5–10 minutes early to test audio/video.</p>
-            <p class="note">• Keep microphone muted when not speaking.</p>
-            <p class="note">• Use the Q&amp;A/chat for questions; moderator will curate.</p>
-            <p class="note">• Recording policy: add your preferred statement here.</p>
-          </div>
+      <div class="card registration-box">
+        <h3>Register via Email</h3>
+        <p>Attendance is free of charge. To register and receive the Zoom connection details, please send an email to:</p>
+        <p style="font-size: 20px; margin: 15px 0;">
+          <a href="mailto:lina.kraujaliene@lsmu.lt?subject=Symposium Registration&body=Full Name:%0D%0AAffiliation:%0D%0AEmail:" 
+             style="color: var(--brand); font-weight: 800; text-decoration: underline;">
+            lina.kraujaliene@lsmu.lt
+          </a>
+        </p>
+        <p>Please provide your <b>Full Name</b>, <b>Affiliation</b>, and <b>Email Address</b> in your message.</p>
+        <div style="margin-top: 20px;">
+           <a href="mailto:lina.kraujaliene@lsmu.lt?subject=Symposium Registration&body=Full Name:%0D%0AAffiliation:%0D%0AEmail:" class="btn btn-primary">Send Registration Email</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="committees">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>Committees</h2>
-            <p>Organizing committee and scientific committee.</p>
-          </div>
+  <section id="committees" class="section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="card">
+          <h3 style="margin-top:0">Scientific Committee</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-weight: 600;">
+            <li style="margin-bottom: 8px;">• Jorge E. Contreras</li>
+            <li>• Mindaugas Šnipas</li>
+          </ul>
         </div>
-
-        <div class="grid2">
-          <div class="box">
-            <h3>Organizing committee</h3>
-            <p class="note">• Tadas Kraujalis</p>
-            <p class="note">• Lina Kraujalienė</p>
-            <p class="note">• Mindaugas Šnipas</p>
-            <p class="note">• Jorge E. Contreras</p>
-          </div>
-
-          <div class="box">
-            <h3>Scientific committee</h3>
-            <p class="note">• Jorge E. Contreras</p>
-            <p class="note">• Mindaugas Šnipas</p>
-            <p class="note">• Lina Kraujalienė</p>
-            <p class="note">• Pablo S. Gaete</p>
-            <p class="note">• Tadas Kraujalis</p>
-          </div>
+        <div class="card">
+          <h3 style="margin-top:0">Organizing Committee</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-weight: 600;">
+            <li style="margin-bottom: 8px;">• Lina Kraujalienė</li>
+            <li>• Tadas Kraujalis</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <section id="contact">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>Contact</h2>
-            <p>For registration, Zoom access, or general questions.</p>
-          </div>
-        </div>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 The 1st Joint Symposium on Connexin Channels Biophysics.</p>
+    <p>Contact: <a href="mailto:minsnip@ktu.lt" style="color:var(--brand)">minsnip@ktu.lt</a></p>
+  </div>
+</footer>
 
-        <div class="grid2">
-          <div class="box">
-            <h3>Contact person</h3>
-            <p class="note"><b>Mindaugas Snipas</b></p>
-            <p class="note"><b>Email:</b> <a href="mailto:minsnip@ktu.lt">minsnip@ktu.lt</a></p>
-          </div>
-          <div class="box">
-            <h3>Support</h3>
-            <p class="note">If you experience technical issues during the symposium, email the contact person above.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<script>
+  const schedule = [
+    { pst:"08:00–08:40", eet:"18:00–18:40", name:"Pablo S. Gaete", affil:"Department of Physiology and Membrane Biology, UC Davis, Davis, California, USA", session:"Session 1" },
+    { pst:"08:40–09:00", eet:"18:40–19:00", name:"Ananth P. Burada", affil:"Molecular Biophysics Unit, Indian Institute of Science, Bangalore, India", session:"Session 1" },
+    { pst:"09:00–09:20", eet:"19:00–19:20", name:"Lina Kraujaliene", affil:"Laboratory of Intercellular Communication, Institute of Cardiology, LSMU, Kaunas, Lithuania", session:"Session 1" },
+    { pst:"09:20–09:40", eet:"19:20–19:40", name:"Vytautas Raskevicius", affil:"Laboratory of Cell Culture, Institute of Cardiology, LSMU, Kaunas, Lithuania", session:"Session 1" },
+    { pst:"09:40–10:00", eet:"19:40–20:00", name:"Coffee Break", affil:"—", session:"Break" },
+    { pst:"10:00–10:20", eet:"20:00–20:20", name:"Mauricio A. Lillo", affil:"Department of Pharmacology, Physiology and Neuroscience, Rutgers University, NJ, USA", session:"Session 2" },
+    { pst:"10:20–10:40", eet:"20:20–20:40", name:"Isaac E. García", affil:"Centro Interdisciplinario de Neurociencias de Valparaíso, Universidad de Valparaíso, Chile", session:"Session 2" },
+    { pst:"10:40–11:00", eet:"20:40–21:00", name:"Lukas Gudaitis", affil:"Laboratory of Experimental Cardiology, Department of Cardiovascular Sciences, KU Leuven", session:"Session 2" },
+    { pst:"11:00–11:20", eet:"21:00–21:20", name:"Jonathan Quan", affil:"Department of Physiology and Membrane Biology, UC Davis, Davis, California, USA", session:"Session 2" }
+  ];
 
-    <footer>
-      <div class="container">
-        <div class="footerGrid">
-          <div>
-            <div style="font-weight:900; color:var(--text);">Nexin Symposium 2026</div>
-            <div>Online symposium • Zoom • Connexin Channels & Hemichannels</div>
-          </div>
-          <div class="smallLinks" aria-label="Footer links">
-            <a href="#about">About</a>
-            <a href="#program">Program</a>
-            <a href="#speakers">Speakers</a>
-            <a href="#committees">Committees</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </main>
+  const tbody = document.getElementById('scheduleBody');
+  tbody.innerHTML = schedule.map(item => `
+    <tr>
+      <td class="time-cell">${item.pst} PST<br><span style="color:var(--muted); font-weight:400; font-size:12px;">${item.eet} EET</span></td>
+      <td>
+        <span class="speaker-name">${item.name}</span>
+        <span class="speaker-affil">${item.affil}</span>
+      </td>
+      <td><span class="session-label">${item.session}</span></td>
+    </tr>
+  `).join('');
+</script>
 
-  <!-- RSVP Modal -->
-  <dialog id="modal" aria-label="RSVP form">
-    <form method="dialog" style="padding:16px; margin:0;">
-      <div class="modalHead">
-        <div>
-          <h3>Register / RSVP</h3>
-        </div>
-        <button class="closeBtn" value="cancel" aria-label="Close">✕</button>
-      </div>
-
-      <div class="form" id="form">
-        <label>
-          Full name
-          <input name="name" required placeholder="Dr. Jane Doe" />
-        </label>
-
-        <label>
-          Email
-          <input name="email" type="email" required placeholder="jane.doe@lab.edu" />
-        </label>
-
-        <label>
-          Affiliation
-          <input name="affiliation" placeholder="University / Institute" />
-        </label>
-
-        <label>
-          Role
-          <select name="role">
-            <option>Faculty / Staff</option>
-            <option>Postdoc</option>
-            <option>PhD / MSc student</option>
-            <option>Other</option>
-          </select>
-        </label>
-
-        <div class="row">
-          <button class="ghost" value="cancel" type="submit">Cancel</button>
-          <button class="cta" id="fakeSubmit" type="button">Save</button>
-        </div>
-      </div>
-
-    </form>
-  </dialog>
-
-  <script>
-    // Mobile menu
-    const nav = document.getElementById('nav');
-    const menuBtn = document.getElementById('menuBtn');
-    const links = Array.from(document.querySelectorAll('[data-link]'));
-    menuBtn?.addEventListener('click', () => nav.classList.toggle('open'));
-    links.forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-
-    // Active link highlighting
-    const sections = ['about','program','speakers','zoom','committees','contact']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-      });
-    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
-
-    sections.forEach(s => obs.observe(s));
-
-    // Program data (from uploaded document; reserve talks removed)
-    const schedule = [
-      { type:"header", session:"Session 1" },
-
-      {
-        type:"talk",
-        pst:"08:00–08:40",
-        eet:"18:00–18:40",
-        speaker:"Pablo S. Gaete",
-        affil:"Department of Physiology and Membrane Biology, UC Davis, Davis, California, USA",
-        title:"Uncoupled and Molecular Permeation through Connexin Hemichannels",
-        session:"Session 1",
-        label:"Keynote"
-      },
-      {
-        type:"talk",
-        pst:"08:40–09:00",
-        eet:"18:40–19:00",
-        speaker:"Ananth P. Burada",
-        affil:"Molecular Biophysics Unit, Indian Institute of Science, Bangalore, India",
-        title:"Cryo-EM Structure of Cx32 Gap Junction Channels: Ca2+-induced Stabilization and Lipid Interaction",
-        session:"Session 1",
-        label:"Talk"
-      },
-      {
-        type:"talk",
-        pst:"09:00–09:20",
-        eet:"19:00–19:20",
-        speaker:"Lina Kraujaliene",
-        affil:"Laboratory of Intercellular Communication, Institute of Cardiology, Lithuanian University of Health Sciences, Kaunas, Lithuania",
-        title:"Regulation of Cardiovascular Gap Junction Channels by General Anaesthetic Propofol",
-        session:"Session 1",
-        label:"Talk"
-      },
-      {
-        type:"talk",
-        pst:"09:20–09:40",
-        eet:"19:20–19:40",
-        speaker:"Vytautas Raskevicius",
-        affil:"Laboratory of Cell Culture, Institute of Cardiology, Lithuanian University of Health Sciences, Kaunas, Lithuania",
-        title:"Regulation of Cx43 Gap Junction Channels by Short Isoprene-Repeat Terpenes and Potential Implications for Ephaptic Transmission",
-        session:"Session 1",
-        label:"Talk"
-      },
-      { type:"break", pst:"09:40–10:00", eet:"19:40–20:00", title:"Break", session:"—" },
-
-      { type:"header", session:"Session 2" },
-
-      {
-        type:"talk",
-        pst:"10:00–10:20",
-        eet:"20:00–20:20",
-        speaker:"Mauricio A. Lillo",
-        affil:"Department of Pharmacology, Physiology and Neuroscience, Rutgers University, New Jersey Medical School, Newark, NJ, USA",
-        title:"The Role of Cx43 Channels and Hemichannels in Vasomotor Function in Resistance Arteries",
-        session:"Session 2",
-        label:"Talk"
-      },
-      {
-        type:"talk",
-        pst:"10:20–10:40",
-        eet:"20:20–20:40",
-        speaker:"Isaac E. García",
-        affil:"Centro Interdisciplinario de Neurociencias de Valparaíso, Universidad de Valparaíso, Valparaíso, Chile; Laboratory of Molecular Physiology and Biophysics, Facultad de Odontología, Universidad de Valparaíso, Valparaíso, Chile",
-        title:"Differential Regulation of Connexin Channels and Hemichannels by Actin Cytosceleton",
-        session:"Session 2",
-        label:"Talk"
-      },
-      {
-        type:"talk",
-        pst:"10:40–11:00",
-        eet:"20:40–21:00",
-        speaker:"Lukas Gudaitis",
-        affil:"Laboratory of Experimental Cardiology, Department of Cardiovascular Sciences, KU Leuven",
-        title:"The Role of Cx43 Hemichannels in Ca2+ Wave Propagation and Synchronization: Studies in Heart Failure Animal Models and Human Tissue",
-        session:"Session 2",
-        label:"Talk"
-      },
-      {
-        type:"talk",
-        pst:"11:00–11:20",
-        eet:"21:00–21:20",
-        speaker:"Jonathan Quan",
-        affil:"Department of Physiology and Membrane Biology, UC Davis, Davis, California, USA",
-        title:"The Role of S-Nitrosylation of Cx43 Gap Junction Channels in Cardiac Arrhythmias",
-        session:"Session 2",
-        label:"Talk"
-      }
-    ];
-
-    const tbody = document.getElementById('scheduleBody');
-    const search = document.getElementById('search');
-    const countChip = document.getElementById('countChip');
-
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, m => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-      }[m]));
-    }
-
-    function render(){
-      const q = (search.value || "").trim().toLowerCase();
-
-      const filtered = schedule.filter(item => {
-        if(item.type === "header") return true;
-        if(!q) return true;
-        const blob = ((item.speaker||"") + " " + (item.title||"") + " " + (item.affil||"") + " " + (item.label||"") + " " + (item.session||"")).toLowerCase();
-        return blob.includes(q);
-      });
-
-      let visibleCount = schedule.filter(x => x.type !== "header").length;
-      let shownCount = filtered.filter(x => x.type !== "header").length;
-      countChip.textContent = `Showing ${shownCount} of ${visibleCount} items`;
-
-      tbody.innerHTML = filtered.map(item => {
-        if(item.type === "header"){
-          return `<tr class="rowHeader">
-            <td class="col-pst" colspan="1"><span class="tag">${escapeHtml(item.session)}</span></td>
-            <td class="col-eet" colspan="1"></td>
-            <td colspan="2"></td>
-          </tr>`;
-        }
-
-        const isBreak = item.type === "break";
-        const rowClass = isBreak ? "break" : "";
-        const talkHtml = isBreak
-          ? `<p class="topic">${escapeHtml(item.title)}</p><p class="speaker">Stretch / coffee</p>`
-          : `<p class="topic">${escapeHtml(item.title)}</p>
-             <p class="speaker"><b>${escapeHtml(item.speaker)}</b></p>
-             <p class="affil">${escapeHtml(item.affil)}</p>`;
-
-        const sessTag = `<span class="tag">${escapeHtml(item.session)}</span>`;
-        const labelTag = item.label ? `<span class="tag">${escapeHtml(item.label)}</span>` : "";
-
-        return `<tr class="${rowClass}">
-          <td class="time col-pst">${escapeHtml(item.pst || "—")}</td>
-          <td class="time col-eet">${escapeHtml(item.eet || "—")}</td>
-          <td>${talkHtml}</td>
-          <td style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start">${sessTag}${labelTag}</td>
-        </tr>`;
-      }).join("");
-    }
-
-    search.addEventListener('input', render);
-    render();
-
-    // Speakers cards (reserve talks removed)
-    const speakerCards = document.getElementById('speakerCards');
-    const speakers = schedule
-      .filter(x => x.type === "talk")
-      .map(x => ({ name:x.speaker, affil:x.affil, title:x.title, session:x.session }))
-      .reduce((acc, cur) => {
-        const k = cur.name;
-        if(!acc[k]) acc[k] = cur;
-        return acc;
-      }, {});
-    const speakerList = Object.values(speakers);
-
-    speakerCards.innerHTML = speakerList.map(s => `
-      <div class="box">
-        <h3 style="margin:0 0 6px">${escapeHtml(s.name)}</h3>
-        <p class="note" style="margin:0 0 10px">${escapeHtml(s.affil)}</p>
-        <p class="note" style="margin:0"><b>Talk:</b> ${escapeHtml(s.title)}</p>
-        <p class="note" style="margin-top:8px"><span class="tag">${escapeHtml(s.session)}</span></p>
-      </div>
-    `).join("");
-
-    // Timezone mode buttons
-    const bodyEl = document.body;
-    const btnBoth = document.getElementById('btnBoth');
-    const btnPst = document.getElementById('btnPst');
-    const btnEet = document.getElementById('btnEet');
-
-    function setMode(mode){
-      bodyEl.classList.remove('mode-both','mode-pst','mode-eet');
-      bodyEl.classList.add(`mode-${mode}`);
-      [btnBoth, btnPst, btnEet].forEach(b => b.classList.remove('active'));
-      if(mode === "both") btnBoth.classList.add('active');
-      if(mode === "pst") btnPst.classList.add('active');
-      if(mode === "eet") btnEet.classList.add('active');
-    }
-    btnBoth.addEventListener('click', () => setMode("both"));
-    btnPst.addEventListener('click', () => setMode("pst"));
-    btnEet.addEventListener('click', () => setMode("eet"));
-
-    // RSVP modal (demo)
-    const modal = document.getElementById('modal');
-    document.getElementById('registerBtn').addEventListener('click', () => modal.showModal());
-    document.getElementById('fakeSubmit').addEventListener('click', () => {
-      const form = document.getElementById('form');
-      const name = form.querySelector('input[name="name"]').value.trim() || "there";
-      alert(`Saved . Thanks, ${name}!`);
-      modal.close();
-    });
-
-    // Copy Zoom template (now explicitly says link provided to registered participants)
-    document.getElementById('copyZoomBtn').addEventListener('click', async () => {
-      const tpl =
-`Zoom access: provided to registered participants
-Zoom link: (sent after registration)
-Meeting ID: (sent after registration)
-Passcode: (sent after registration)
-Contact: Mindaugas Snipas — minsnip@ktu.lt
-Time zones: PST and EET
-`;
-      try{
-        await navigator.clipboard.writeText(tpl);
-        alert("Copied Zoom template to clipboard.");
-      }catch(e){
-        alert("Could not copy automatically. Please copy manually:\\n\\n" + tpl);
-      }
-    });
-
-    // ICS download (single event)
-    function download(filename, content, mime){
-      const blob = new Blob([content], {type: mime});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    document.getElementById('icsBtn').addEventListener('click', () => {
-      const ics =
-`BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Nexin Symposium//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-UID:nexin-symposium-2026@example.org
-DTSTAMP:20250101T000000Z
-SUMMARY:Nexin Symposium (Online, Zoom)
-DESCRIPTION:Connexin Channels & Hemichannels. Time shown in Pacific Standard Time (PST) and Eastern Europe (EET). Zoom link provided to registered participants.
-LOCATION:Online (Zoom)
-DTSTART:20260319T080000
-DTEND:20260319T112000
-END:VEVENT
-END:VCALENDAR
-`;
-      download("nexin-symposium-2026.ics", ics, "text/calendar;charset=utf-8");
-    });
-  </script>
 </body>
 </html>
